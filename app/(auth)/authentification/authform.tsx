@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { signIn } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { FcGoogle } from "react-icons/fc";
-import { BETTER_AUTH_URL } from "@/utils/envVariables";
+import { BETTER_AUTH_URL, DATABASE_URL } from "@/utils/envVariables";
 
 const Authform = () => {
   const handleSignWithGoogle = async () => {
@@ -32,7 +32,7 @@ const Authform = () => {
       </Button>
 
       <Button
-        onClick={() => console.log({ urlAuth: BETTER_AUTH_URL })}
+        onClick={() => console.log({ urlAuth: BETTER_AUTH_URL, DATABASE_URL })}
         className="mt-2"
       >
         auth url

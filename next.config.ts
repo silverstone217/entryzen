@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
     GOOGLE_AUTH_CLIENT_ID: process.env.GOOGLE_AUTH_CLIENT_ID,
     GOOGLE_AUTH_CLIENT_SECRET: process.env.GOOGLE_AUTH_CLIENT_SECRET,
+    DATABASE_URL: process.env.DATABASE_URL,
   },
   images: {
     // domains: ['firebasestorage.googleapis.com', 'lh3.googleusercontent.com'],
