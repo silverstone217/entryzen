@@ -7,6 +7,7 @@ import {
   GOOGLE_AUTH_CLIENT_ID,
 } from "@/utils/envVariables";
 import { nextCookies } from "better-auth/next-js";
+import { inferAdditionalFields } from "better-auth/client/plugins";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -29,5 +30,5 @@ export const auth = betterAuth({
   },
 
   secret: BETTER_AUTH_SECRET!,
-  plugins: [nextCookies()],
+  plugins: [nextCookies(), inferAdditionalFields()],
 });

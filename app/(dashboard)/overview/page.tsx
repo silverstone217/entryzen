@@ -1,4 +1,5 @@
 import { getUser } from "@/actions/authActions";
+import LogoutButton from "@/components/LogoutButton";
 import React from "react";
 
 async function page() {
@@ -12,6 +13,7 @@ async function page() {
       <h2 className="text-3xl">
         Binevenue, <strong>{user?.name}</strong>
       </h2>
+      <LogoutButton />
     </div>
   );
 }
