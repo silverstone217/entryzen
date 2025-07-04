@@ -19,7 +19,6 @@ const ThemeSwap = () => {
       <Button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         aria-label="theme switch"
-        aria-hidden
         size={"icon"}
         className=""
       >
