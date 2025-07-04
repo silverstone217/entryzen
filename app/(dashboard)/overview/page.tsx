@@ -11,7 +11,6 @@ async function page() {
       className="min-h-screen flex flex-col
     justify-start items-start gap-4"
     >
-      <h1 className="text-md">Overview page</h1>
       <h2 className="text-3xl">
         Binevenue, <strong>{user?.name}</strong>
       </h2>

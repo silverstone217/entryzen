@@ -16,7 +16,7 @@ export const DashboardLinksPage = [
   {
     label: "Mes evenements",
     icon: PartyPopper,
-    value: "/mes-evenements",
+    value: "/mes-evenements/listes",
   },
   {
     label: "Mes tickets",

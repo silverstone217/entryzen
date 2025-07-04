@@ -20,11 +20,13 @@ model User {
   email         String
   emailVerified Boolean
   image         String?
-  createdAt     DateTime
-  updatedAt     DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
   sessions Session[]
   accounts Account[]
+
+  events Event[]
 
   @@unique([email])
   @@map("user")
@@ -34,8 +36,8 @@ model Session {
   id        String   @id @default(cuid())
   expiresAt DateTime
   token     String
-  createdAt DateTime
-  updatedAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   ipAddress String?
   userAgent String?
   userId    String
@@ -58,8 +60,8 @@ model Account {
   refreshTokenExpiresAt DateTime?
   scope                 String?
   password              String?
-  createdAt             DateTime
-  updatedAt             DateTime
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
 
   @@map("account")
 }
@@ -73,4 +75,28 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+model Event {
+  id          String  @id @default(cuid())
+  name        String
+  description String
+  address     String
+  addressName String?
+
+  price             BigInt
+  participantNumber Int      @default(0)
+  participantLimit  Int      @default(0)
+  eventdate         DateTime @db.Date
+  startTime         DateTime @db.Time
+
+  cover  String
+  images String[]
+  videos String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
