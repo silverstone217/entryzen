@@ -1,7 +1,12 @@
 import React from "react";
+import EventForm from "./NewEventForm";
 
 function page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <EventForm />
+    </div>
+  );
 }
 
 export default page;
