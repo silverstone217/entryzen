@@ -1,12 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { signOut } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const LogoutButton = () => {
+type Props = {
+  className?: string;
+};
+
+const LogoutButton = ({ className }: Props) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -23,10 +27,16 @@ const LogoutButton = () => {
     }
   };
   return (
-    <Button variant={"destructive"} onClick={handleLogout} disabled={loading}>
+    <button
+      // variant={"destructive"}
+      onClick={handleLogout}
+      disabled={loading}
+      className={`${className} flex items-center gap-4 text-sm 
+          font-medium text-destructive`}
+    >
       <LogOut />
       <span>{loading ? "en cours..." : "Deconnexion"}</span>
-    </Button>
+    </button>
   );
 };
 

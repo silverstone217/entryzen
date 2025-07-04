@@ -1,18 +1,12 @@
 // hooks/useAuthUser.ts
 "use client";
+import { User } from "@/app/generated/prisma";
 import { useSession } from "@/lib/auth-client";
-
-interface User {
-  id: string;
-  email: string;
-  name?: string;
-  // ajoute d'autres propriétés selon ton schéma utilisateur Better Auth
-}
 
 export function useAuthUser() {
   const { data: session, isPending, error } = useSession();
 
-  const user = session?.user as User | undefined;
+  const user = session?.user as User | null;
   const isLoading = isPending;
   const isAuthenticated = !isPending && !!user;
 

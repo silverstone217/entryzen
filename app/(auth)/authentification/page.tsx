@@ -12,13 +12,27 @@ async function authentification() {
   if (user) redirect("/overview");
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
-      <Card className="max-w-lg w-full p-8 shadow-lg">
-        <h2 className="text-center text-4xl lg:text-5xl font-extrabold text-gray-900">
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4
+     dark:bg-gray-950"
+    >
+      <Card
+        className="max-w-lg w-full p-8 shadow-lg
+      
+      "
+      >
+        <h2
+          className="text-center text-4xl lg:text-5xl font-extrabold text-gray-900
+        dark:text-gray-300
+        "
+        >
           Bienvenue sur <strong className="text-indigo-600">Entryzen</strong>
         </h2>
 
-        <p className="mt-4 text-center text-gray-600 text-base lg:text-lg max-w-md mx-auto">
+        <p
+          className="mt-4 text-center text-gray-600 text-base lg:text-lg max-w-md mx-auto
+        "
+        >
           {` Connectez-vous pour retrouver, gérer des milliers d'événements ou
           acheter des billets.`}
         </p>
